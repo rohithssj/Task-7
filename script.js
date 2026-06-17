@@ -29,10 +29,36 @@ taskForm.addEventListener('submit', (e) => {
                     <span><i class="ri-delete-bin-line delete"></i></span>
                 </div>
 `
+    const deleteBtn = taskCard.querySelector('.delete')
+    deleteBtn.addEventListener('click', () => {
+        taskCard.remove()
+    })
+
+    const checkBtn = taskCard.querySelector(".check")
+    const statusBtn = taskCard.querySelector(".categories h2:last-child")
+    checkBtn.addEventListener('click', () => {
+        taskCard.classList.toggle("completed")
+        setTimeout(() => {
+            taskCard.remove()
+        }, 2000)
+        if (taskCard.classList.contains("completed")) {
+            statusBtn.textContent = "Completed"
+        }
+        else {
+            statusBtn.textContent = "Pending"
+
+        }
+    })
+
+
 
     taskContainer.appendChild(taskCard)
     taskForm.reset()
 })
+
+
+
+
 
 
 

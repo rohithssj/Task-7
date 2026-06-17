@@ -284,11 +284,11 @@ select {
     text-align: center;
 }
 
-.task-body{
-    padding:15px;
-    border:1px solid var(--border-color);
-    border-radius:10px;
-    margin-bottom:10px;
+.task-body {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .categories {
@@ -329,49 +329,56 @@ select {
     color: red;
 }
 
+.completed{
+    opacity: 0.7;
+}
+
+.completed h1{
+    text-decoration: line-through;
+}
 /* -----------Desktop------------ */
 
-@media (min-width:1024px){
+@media (min-width:1024px) {
 
-    .dashboard{
-        display:flex;
-        gap:20px;
-        align-items:flex-start;
-        padding:20px;
-         max-width: 1400px;
-    margin: 0 auto;
+    .dashboard {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
-    .left-panel{
-       flex: 1;
-       max-width: 400px;
+    .left-panel {
+        flex: 1;
+        max-width: 400px;
     }
 
-    .right-panel{
+    .right-panel {
         flex: 2;
     }
 
-    .nav h1{
-        font-size:2.3rem;
-        position:absolute;
-        left:50px;
+    .nav h1 {
+        font-size: 2.3rem;
+        position: absolute;
+        left: 50px;
     }
 
-    .task{
-        display:inline-block;
-        font-size:2rem;
+    .task {
+        display: inline-block;
+        font-size: 2rem;
     }
 
-    .ham{
-        display:none;
+    .ham {
+        display: none;
     }
 
-    .moon{
-        font-size:2.3rem;
+    .moon {
+        font-size: 2.3rem;
     }
 
-    .nav{
-        padding:18px;
-        min-height:80px;
+    .nav {
+        padding: 18px;
+        min-height: 80px;
     }
 }
