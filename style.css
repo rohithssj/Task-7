@@ -79,6 +79,12 @@ body {
     height: 100%;
 }
 
+/* .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+} */
+
 body {
     background-color: var(--bg-color);
     font-family: "Poppins", sans-serif;
@@ -94,7 +100,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.619);
+    border-bottom: 1px solid var(--border-color);
     min-height: 70px;
 }
 
@@ -113,11 +119,24 @@ nav {
     color: var(--primary);
 }
 
+
+.moon{
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.moon:hover{
+    transform:rotate(20deg);
+}
+
 .addTask {
     width: 100%;
-    height: 50vh;
+    /* height: 17vh; */
+    
     /* background-color: red; */
     padding: 20px;
+    /* margin: 10px; */
+    margin-top: 10px;
 }
 
 .addTask h1 {
@@ -125,36 +144,69 @@ nav {
     font-weight: 700;
     color: var(--primary);
 
+
 }
 
-.input-group{
+.addTask {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.input-group {
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-.input-group input,select{
-    height: 1.5rem;
-   
+.input-group input,
+select {
+    width:100%;
+    padding:12px 14px;
+    min-height:48px;
+    font-size: 1rem;
+
 }
 
-.input-group input{
-     padding: 18px;
-     border-radius: 4px;
-     border: 1px solid var(--border-color);
-     background-color: var(--input-bg);
-     outline: none;
+.input-group input {
+    /* padding: 18px; */
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    outline: none;
 }
 
-.input-group select{
-    padding: 12px;
-     border-radius: 4px;
-     border: 1px solid var(--border-color);
-     background-color: var(--input-bg);
-     outline: none;
+.input-group select {
+    padding: 18px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    outline: none;
 }
 
+.submit {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    border: var(--primary);
+    outline: none;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
 
 
 
@@ -186,6 +238,12 @@ nav {
     .nav {
         padding: 18px;
         min-height: 80px;
+    }
+
+    .addTask{
+        width: 35%;
+        /* height: 18vh; */
+        margin: 10px;
     }
 
 }

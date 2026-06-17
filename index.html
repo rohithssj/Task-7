@@ -33,6 +33,7 @@
                     <input type="text" placeholder="Enter Task....." id="enter">
 
                     <select name="category" id="category">
+                        <option value="" selected disabled>Select Category</option>
                         <option value="work">Work</option>
                         <option value="study">Study</option>
                         <option value="personal">Personal</option>
@@ -41,6 +42,26 @@
                 </div>
                 <button class="submit"><i class="ri-add-line"></i> Add Task</button>
             </form>
+        </section>
+
+        <section class="search addTask">
+               <h1>Search & Filter</h1>
+
+            <form id="input">
+                <div class="input-group">
+                    <input type="text" placeholder="Search Tasks....." id="enter">
+
+                    <select name="category" id="category">
+                        <option value="" selected disabled>All</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                        <option value="personal">Personal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+            </form>
+        </section>
         </section>
     </div>
 
