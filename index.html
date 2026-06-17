@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <nav>
+                <div class="nav">
+                    <i class="ri-menu-line ham"></i>
+                    <i class="ri-todo-line task"></i>
+                    <h1>Tasks!</h1>
+                    <i class="ri-moon-line moon"></i>
+                </div>
+            </nav>
+        </main>
+
+        <section class="addTask">
+            <h1>Add New Task</h1>
+
+            <form id="input">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Task....." id="enter">
+
+                    <select name="category" id="category">
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                        <option value="personal">Personal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button class="submit"><i class="ri-add-line"></i> Add Task</button>
+            </form>
+        </section>
+    </div>
+
+</body>
+
+</html>
