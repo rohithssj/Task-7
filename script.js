@@ -5,10 +5,11 @@ const taskContainer = document.querySelector(".tasks-container")
 
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const title = taskInput.value
+    let title = taskInput.value
     const category = taskCategory.value
     if (title === "" || category === "") {
         alert("Please fill all the fields")
+        return
     }
     console.log("Form Submitted!");
 
@@ -38,9 +39,6 @@ taskForm.addEventListener('submit', (e) => {
     const statusBtn = taskCard.querySelector(".categories h2:last-child")
     checkBtn.addEventListener('click', () => {
         taskCard.classList.toggle("completed")
-        setTimeout(() => {
-            taskCard.remove()
-        }, 2000)
         if (taskCard.classList.contains("completed")) {
             statusBtn.textContent = "Completed"
         }
@@ -50,6 +48,14 @@ taskForm.addEventListener('submit', (e) => {
         }
     })
 
+    const editBtn = taskCard.querySelector(".edit")
+    const titleElement = taskCard.querySelector("h1")
+    editBtn.addEventListener('click',()=>{
+        let newTitle  = prompt("Edit your task......")
+        if(newTitle){
+            titleElement.textContent = newTitle
+        }
+    })
 
 
     taskContainer.appendChild(taskCard)
