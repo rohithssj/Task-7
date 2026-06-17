@@ -3,6 +3,8 @@ const taskInput = document.querySelector(".enter")
 const taskCategory = document.querySelector(".category")
 const taskContainer = document.querySelector(".tasks-container")
 
+taskContainer.style.display = "none"
+
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
     let title = taskInput.value
@@ -12,6 +14,8 @@ taskForm.addEventListener('submit', (e) => {
         return
     }
     console.log("Form Submitted!");
+
+    taskContainer.style.display = "block"
 
     const taskCard = document.createElement("div")
 
@@ -33,6 +37,7 @@ taskForm.addEventListener('submit', (e) => {
     const deleteBtn = taskCard.querySelector('.delete')
     deleteBtn.addEventListener('click', () => {
         taskCard.remove()
+       
     })
 
     const checkBtn = taskCard.querySelector(".check")
@@ -50,9 +55,9 @@ taskForm.addEventListener('submit', (e) => {
 
     const editBtn = taskCard.querySelector(".edit")
     const titleElement = taskCard.querySelector("h1")
-    editBtn.addEventListener('click',()=>{
-        let newTitle  = prompt("Edit your task......")
-        if(newTitle){
+    editBtn.addEventListener('click', () => {
+        let newTitle = prompt("Edit your task......")
+        if (newTitle) {
             titleElement.textContent = newTitle
         }
     })
@@ -62,6 +67,28 @@ taskForm.addEventListener('submit', (e) => {
     taskForm.reset()
 })
 
+
+const moonBtn = document.querySelector(".moon")
+moonBtn.addEventListener('click', () => {
+    if (document.body.dataset.theme == "light") {
+        document.body.setAttribute(
+            "data-theme", "dark"
+
+        )
+        moonBtn.classList.remove("ri-moon-line")
+        moonBtn.classList.add("ri-sun-line")
+
+
+    }
+    else {
+        document.body.setAttribute(
+            "data-theme", "light"
+        )
+        moonBtn.classList.remove("ri-sun-line")
+        moonBtn.classList.add("ri-moon-line")
+
+    }
+})
 
 
 

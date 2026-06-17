@@ -66,6 +66,18 @@
 }
 
 
+body[data-theme="dark"]{
+
+    --bg-color: #0F172A;
+    --card-bg: #1E293B;
+    --input-bg: #334155;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+
+    --border-color: #475569;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -89,6 +101,7 @@ body {
     background-color: var(--bg-color);
     font-family: "Poppins", sans-serif;
     font-style: normal;
+    color: var(--text-primary);
 }
 
 nav {
@@ -270,6 +283,7 @@ select {
     background-color: var(--card-bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 10px;
+    color: var(--text-primary);
 }
 
 .section-heading h2 {
