@@ -13,26 +13,27 @@
 </head>
 
 <body>
-    <div class="container">
-        <main>
-            <nav>
-                <div class="nav">
-                    <i class="ri-menu-line ham"></i>
-                    <i class="ri-todo-line task"></i>
-                    <h1>Tasks!</h1>
-                    <i class="ri-moon-line moon"></i>
-                </div>
-            </nav>
-        </main>
 
+    <nav>
+        <div class="nav">
+            <i class="ri-menu-line ham"></i>
+            <i class="ri-todo-line task"></i>
+            <h1>Tasks!</h1>
+            <i class="ri-moon-line moon"></i>
+        </div>
+    </nav>
+<div class="dashboard">
+    
+
+    <div class="left-panel">
         <section class="addTask">
             <h1>Add New Task</h1>
 
             <form id="input">
                 <div class="input-group">
-                    <input type="text" placeholder="Enter Task....." id="enter">
+                    <input type="text" placeholder="Enter Task....." class="enter">
 
-                    <select name="category" id="category">
+                    <select name="category" class="category">
                         <option value="" selected disabled>Select Category</option>
                         <option value="work">Work</option>
                         <option value="study">Study</option>
@@ -47,16 +48,16 @@
         <section class="search addTask">
             <h1>Search & Filter</h1>
 
-            <form id="input">
+            <form id="select">
                 <div class="input-group">
-                    <input type="text" placeholder="Search Tasks....." id="enter">
+                    <input type="text" placeholder="Search Tasks....." id="select-enter">
 
-                    <select name="category" id="category">
+                    <select name="category" id="select-category">
                         <option value="" selected disabled>All</option>
-                        <option value="work">Work</option>
-                        <option value="study">Study</option>
-                        <option value="personal">Personal</option>
-                        <option value="other">Other</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
@@ -90,39 +91,45 @@
             </div>
 
         </section>
+    </div>
 
-        <section class="tasks">
-            <div class="section-heading">
-                <h2>Tasks</h2>
-            </div>
+ <div class="right-panel">
+     <section class="tasks">
+        <div class="section-heading">
+            <h2>Tasks</h2>
+        </div>
 
-            <div class="tasks-container">
+        <div class="tasks-container" id="tasksContainer">
 
-                <!-- <div class="empty-state">
+            <!-- <div class="empty-state">
                     <i class="ri-file-list-3-line"></i>
                     <h3>No Tasks Available</h3>
                     <p>Add a task to get started</p>
                 </div> -->
 
-                <div class="task-body">
-                    <h1>Learn Javascript</h1>
-                    <div class="categories">
-                        <h2>Study</h2>
-                        <h2>Pending</h2>
-                    </div>
-
-                    <div class="status">
-                        <span><i class="ri-edit-2-line edit"></i></span>
-                        <span><i class="ri-check-line check"></i></span>
-                        <span><i class="ri-delete-bin-line delete"></i></span>
-                    </div>
+            <!-- <div class="task-body">
+                <h1>Learn Javascript</h1>
+                <div class="categories">
+                    <h2>Study</h2>
+                    <h2>Pending</h2>
                 </div>
 
-            </div>
+                <div class="status">
+                    <span><i class="ri-edit-2-line edit"></i></span>
+                    <span><i class="ri-check-line check"></i></span>
+                    <span><i class="ri-delete-bin-line delete"></i></span>
+                </div>
+            </div> -->
 
-        </section>
-    </div>
+        </div>
 
+    </section>
+ </div>
+
+ </div>
+   
+
+ <script src="script.js"></script>
 </body>
 
 </html>
