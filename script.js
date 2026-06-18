@@ -6,8 +6,49 @@ const moonBtn = document.querySelector(".moon")
 const totalTasks = document.querySelector(".total")
 const completedTasks = document.querySelector(".completedTasks")
 const pendingTasks = document.querySelector(".pending")
-
+let taskId = 0
+const selectInput = document.querySelector("#select-enter")
+const filter = document.querySelector("#select-category")
 taskContainer.style.display = "none"
+
+
+
+selectInput.addEventListener('input', (() => {
+    const searchValue = selectInput.value.toLowerCase()
+
+    const tasks = document.querySelectorAll(".task-body")
+
+    tasks.forEach(task => {
+        const title = task.querySelector("h1").textContent.toLowerCase()
+        if (title.includes(searchValue)) {
+            task.style.display = "block"
+        }
+        else {
+            task.style.display = "none"
+
+        }
+    })
+
+}))
+
+filter.addEventListener("change", (() => {
+    const selected = filter.value.toLowerCase()
+
+    const tasks = document.querySelectorAll(".task-body")
+    tasks.forEach(task => {
+        const taskCategory = task.dataset.category
+
+        if (selected === "" || taskCategory === selected) {
+            task.style.display = "block"
+        }
+        else {
+            task.style.display = "none"
+        }
+    })
+}))
+
+
+
 
 taskForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -22,6 +63,9 @@ taskForm.addEventListener('submit', (e) => {
     taskContainer.style.display = "block"
 
     const taskCard = document.createElement("div")
+    taskId++
+    taskCard.setAttribute("data-id", taskId)
+    taskCard.setAttribute("data-category", category.toLowerCase())
 
     taskCard.classList.add("task-body")
 
@@ -67,8 +111,11 @@ taskForm.addEventListener('submit', (e) => {
     //             titleElement.textContent = newTitle
     //         }
     //     })
-
+     if (taskCard.hasAttribute("data-id")) {
+        console.log("Task has ID")
+    }
     taskContainer.appendChild(taskCard)
+    saveCards()
     updateStats()
     taskForm.reset()
 })
@@ -78,7 +125,9 @@ taskContainer.addEventListener('click', (e) => {
 
     if (e.target.classList.contains("delete")) {
         const taskCard = e.target.closest(".task-body")
+        console.log(taskCard.getAttribute("data-id"));
         taskCard.remove()
+        saveCards()
         updateStats()
     }
     if (e.target.classList.contains("check")) {
@@ -87,11 +136,16 @@ taskContainer.addEventListener('click', (e) => {
         taskCard.classList.toggle("completed")
         if (taskCard.classList.contains("completed")) {
             statusText.textContent = "Completed"
+            taskCard.setAttribute("data-status", "completed")
         }
         else {
             statusText.textContent = "Pending"
+            taskCard.setAttribute("data-status", "pending")
+
         }
         updateStats()
+        saveCards()
+
     }
 
 
@@ -103,7 +157,11 @@ taskContainer.addEventListener('click', (e) => {
         if (titleElement) {
             titleElement.textContent = newTitle
         }
+        saveCards()
+
     }
+
+   
 
 })
 
@@ -141,6 +199,26 @@ const updateStats = () => {
 }
 
 
+const saveCards = () => {
+    localStorage.setItem("tasks", taskContainer.innerHTML)
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const savedTasks =
+        localStorage.getItem("tasks")
+
+    if (savedTasks) {
+
+        taskContainer.innerHTML =
+            savedTasks
+
+        updateStats()
+
+    }
+
+})
 
 
 
