@@ -209,7 +209,35 @@ select {
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: 700;
+    
 }
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.clear{
+    background-color: var(--danger);
+     display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: var(--primary);
+    outline: none;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    gap: 0.5rem;
+}
+
+
 
 .submit:hover {
     background-color: var(--primary-hover);
@@ -350,6 +378,114 @@ select {
 .completed h1{
     text-decoration: line-through;
 }
+
+.event-demo{
+    background: var(--card-bg);
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.event-demo h2{
+    color: var(--primary);
+    margin-bottom:20px;
+}
+
+.grandparent{
+    border:2px solid #ef4444;
+    padding:25px;
+    border-radius:10px;
+}
+
+.parent{
+    border:2px solid #3b82f6;
+    padding:25px;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+.child-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+}
+
+.attribute-demo{
+    background:var(--card-bg);
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    box-shadow:var(--shadow-sm);
+}
+
+.attribute-demo h2{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.attribute-demo input{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border-color);
+    border-radius:8px;
+}
+
+.attribute-demo button{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+
+.pipeline-demo{
+    background:var(--card-bg);
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+    box-shadow:var(--shadow-sm);
+}
+
+.pipeline-demo h2{
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.pipeline-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.pipeline-card{
+    width:100%;
+    max-width:300px;
+    text-align:center;
+    padding:15px;
+    background:var(--primary);
+    color:white;
+    border-radius:8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.imp{
+    background-color: var(--personal);
+}
+
+.pipeline-card:hover{
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
 /* -----------Desktop------------ */
 
 @media (min-width:1024px) {
@@ -395,4 +531,17 @@ select {
         padding: 18px;
         min-height: 80px;
     }
+
+
+    @media(min-width:1024px){
+
+    .event-demo,.attribute-demo,.pipeline-demo{
+        margin-top:20px;
+    }
+
+    .pipeline-card{
+        max-width:450px;
+    }
+
+}
 }

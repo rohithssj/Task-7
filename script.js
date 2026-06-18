@@ -111,7 +111,7 @@ taskForm.addEventListener('submit', (e) => {
     //             titleElement.textContent = newTitle
     //         }
     //     })
-     if (taskCard.hasAttribute("data-id")) {
+    if (taskCard.hasAttribute("data-id")) {
         console.log("Task has ID")
     }
     taskContainer.appendChild(taskCard)
@@ -161,7 +161,7 @@ taskContainer.addEventListener('click', (e) => {
 
     }
 
-   
+
 
 })
 
@@ -220,6 +220,57 @@ window.addEventListener("DOMContentLoaded", () => {
 
 })
 
+
+const grandparent = document.querySelector(".grandparent")
+
+const parent = document.querySelector(".parent")
+
+const child = document.querySelector(".child-btn")
+
+
+
+grandparent.addEventListener("click", () => {
+    console.log("Grandparent Bubble")
+})
+
+parent.addEventListener("click", () => {
+    console.log("Parent Bubble")
+})
+
+child.addEventListener("click", () => {
+    console.log("Child Bubble")
+})
+
+
+
+grandparent.addEventListener("click", () => {
+    console.log("Grandparent Capture")
+}, true)
+
+parent.addEventListener("click", () => {
+    console.log("Parent Capture")
+}, true)
+
+
+const demoBtn = document.querySelector("#demoBtn")
+
+const demoInput = document.querySelector("#demoInput")
+
+demoBtn.addEventListener("click", () => {
+
+    console.log("Property:", demoInput.value)
+
+    console.log("Attribute:", demoInput.getAttribute("value"))
+
+})
+
+
+const clearBtn = document.querySelector("#clear")
+
+clearBtn.addEventListener("click", () => {
+    localStorage.clear()
+    location.reload()
+})
 
 
 

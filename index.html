@@ -41,7 +41,9 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <button class="submit"><i class="ri-add-line"></i> Add Task</button>
+                    <div class="buttons">
+                        <button class="submit"><i class="ri-add-line"></i> Add Task</button>
+                    </div>
                 </form>
             </section>
 
@@ -62,6 +64,7 @@
                     </div>
 
                 </form>
+                <button class="clear" id="clear">Clear Storage <i class="ri-delete-bin-line delete"></i></button>
             </section>
 
 
@@ -120,6 +123,83 @@
                     <span><i class="ri-delete-bin-line delete"></i></span>
                 </div>
             </div> -->
+
+                </div>
+
+            </section>
+
+            <section class="event-demo">
+                <h2>Event Propagation Demo</h2>
+
+                <div class="grandparent">
+                    Grandparent
+
+                    <div class="parent">
+                        Parent
+
+                        <button class="child-btn">
+                            Child Button
+                        </button>
+
+                    </div>
+                </div>
+
+                <p>
+                    Open Console and click Child Button to see
+                    Bubbling & Capturing order.
+                </p>
+            </section>
+
+
+            <section class="attribute-demo">
+
+                <h2>Attributes vs Properties</h2>
+
+                <input type="text" id="demoInput" value="Hello World">
+
+                <button id="demoBtn">
+                    Check Console
+                </button>
+
+                <p>
+                    Click button and compare
+                    value property vs value attribute.
+                </p>
+
+            </section>
+
+            <section class="pipeline-demo">
+
+                <h2>Browser Rendering Pipeline</h2>
+
+                <div class="pipeline-container">
+
+                    <div class="pipeline-card">HTML</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card">Parsing</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card">Tokenization</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card imp">DOM Tree</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card">CSS</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card imp">CSSOM Tree</div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card">
+                        DOM + CSSOM
+                    </div>
+                    <span>↓</span>
+
+                    <div class="pipeline-card imp">
+                        Render Tree
+                    </div>
 
                 </div>
 
