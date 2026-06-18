@@ -22,92 +22,92 @@
             <i class="ri-moon-line moon"></i>
         </div>
     </nav>
-<div class="dashboard">
-    
+    <div class="dashboard">
 
-    <div class="left-panel">
-        <section class="addTask">
-            <h1>Add New Task</h1>
 
-            <form id="input">
-                <div class="input-group">
-                    <input type="text" placeholder="Enter Task....." class="enter">
+        <div class="left-panel">
+            <section class="addTask">
+                <h1>Add New Task</h1>
 
-                    <select name="category" class="category">
-                        <option value="" selected disabled>Select Category</option>
-                        <option value="work">Work</option>
-                        <option value="study">Study</option>
-                        <option value="personal">Personal</option>
-                        <option value="other">Other</option>
-                    </select>
+                <form id="input">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter Task....." class="enter">
+
+                        <select name="category" class="category">
+                            <option value="" selected disabled>Select Category</option>
+                            <option value="work">Work</option>
+                            <option value="study">Study</option>
+                            <option value="personal">Personal</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button class="submit"><i class="ri-add-line"></i> Add Task</button>
+                </form>
+            </section>
+
+            <section class="search addTask">
+                <h1>Search & Filter</h1>
+
+                <form id="select">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search Tasks....." id="select-enter">
+
+                        <select name="category" id="select-category">
+                            <option value="" selected disabled>All</option>
+                            <option value="Work">Work</option>
+                            <option value="Study">Study</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                </form>
+            </section>
+
+
+            <section class="stats">
+                <h1>Stats</h1>
+                <div class="cards">
+                    <div class="stat-card card1">
+                        <h2>Total</h2>
+                        <span>
+                            <p class="total">0</p>
+                        </span>
+                    </div>
+
+                    <div class="stat-card card2">
+                        <h2>Completed</h2>
+                        <span>
+                            <p class="completedTasks">0</p>
+                        </span>
+                    </div>
+
+                    <div class="stat-card card3">
+                        <h2>Pending</h2>
+                        <span>
+                            <p class="pending">0</p>
+                        </span>
+                    </div>
                 </div>
-                <button class="submit"><i class="ri-add-line"></i> Add Task</button>
-            </form>
-        </section>
 
-        <section class="search addTask">
-            <h1>Search & Filter</h1>
-
-            <form id="select">
-                <div class="input-group">
-                    <input type="text" placeholder="Search Tasks....." id="select-enter">
-
-                    <select name="category" id="select-category">
-                        <option value="" selected disabled>All</option>
-                        <option value="Work">Work</option>
-                        <option value="Study">Study</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-            </form>
-        </section>
-        
-
-        <section class="stats">
-            <h1>Stats</h1>
-            <div class="cards">
-                <div class="stat-card card1">
-                    <h2>Total</h2>
-                    <span class="total">
-                        <p>0</p>
-                    </span>
-                </div>
-
-                <div class="stat-card card2">
-                    <h2>Completed</h2>
-                    <span class="completed">
-                        <p>0</p>
-                    </span>
-                </div>
-
-                <div class="stat-card card3">
-                    <h2>Pending</h2>
-                    <span class="pending">
-                        <p>0</p>
-                    </span>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
- <div class="right-panel">
-     <section class="tasks">
-        <div class="section-heading">
-            <h2>Tasks</h2>
+            </section>
         </div>
 
-        <div class="tasks-container" id="tasksContainer">
+        <div class="right-panel">
+            <section class="tasks">
+                <div class="section-heading">
+                    <h2>Tasks</h2>
+                </div>
 
-            <!-- <div class="empty-state">
+                <div class="tasks-container" id="tasksContainer">
+
+                    <!-- <div class="empty-state">
                     <i class="ri-file-list-3-line"></i>
                     <h3>No Tasks Available</h3>
                     <p>Add a task to get started</p>
                 </div> -->
 
-            <!-- <div class="task-body">
+                    <!-- <div class="task-body">
                 <h1>Learn Javascript</h1>
                 <div class="categories">
                     <h2>Study</h2>
@@ -121,15 +121,15 @@
                 </div>
             </div> -->
 
+                </div>
+
+            </section>
         </div>
 
-    </section>
- </div>
+    </div>
 
- </div>
-   
 
- <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

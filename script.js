@@ -2,6 +2,10 @@ const taskForm = document.querySelector("#input")
 const taskInput = document.querySelector(".enter")
 const taskCategory = document.querySelector(".category")
 const taskContainer = document.querySelector(".tasks-container")
+const moonBtn = document.querySelector(".moon")
+const totalTasks = document.querySelector(".total")
+const completedTasks = document.querySelector(".completedTasks")
+const pendingTasks = document.querySelector(".pending")
 
 taskContainer.style.display = "none"
 
@@ -34,41 +38,75 @@ taskForm.addEventListener('submit', (e) => {
                     <span><i class="ri-delete-bin-line delete"></i></span>
                 </div>
 `
-    const deleteBtn = taskCard.querySelector('.delete')
-    deleteBtn.addEventListener('click', () => {
-        taskCard.remove()
-       
-    })
+    //     const deleteBtn = taskCard.querySelector('.delete')
+    //     deleteBtn.addEventListener('click', () => {
+    //         taskCard.remove()
+    //         updateStats()
 
-    const checkBtn = taskCard.querySelector(".check")
-    const statusBtn = taskCard.querySelector(".categories h2:last-child")
-    checkBtn.addEventListener('click', () => {
-        taskCard.classList.toggle("completed")
-        if (taskCard.classList.contains("completed")) {
-            statusBtn.textContent = "Completed"
-        }
-        else {
-            statusBtn.textContent = "Pending"
+    //     })
 
-        }
-    })
+    //     const checkBtn = taskCard.querySelector(".check")
+    //     const statusBtn = taskCard.querySelector(".categories h2:last-child")
+    //     checkBtn.addEventListener('click', () => {
+    //         taskCard.classList.toggle("completed")
+    //         if (taskCard.classList.contains("completed")) {
+    //             statusBtn.textContent = "Completed"
+    //         }
+    //         else {
+    //             statusBtn.textContent = "Pending"
 
-    const editBtn = taskCard.querySelector(".edit")
-    const titleElement = taskCard.querySelector("h1")
-    editBtn.addEventListener('click', () => {
-        let newTitle = prompt("Edit your task......")
-        if (newTitle) {
-            titleElement.textContent = newTitle
-        }
-    })
+    //         }
+    //         updateStats()
+    //     })
 
+    //     const editBtn = taskCard.querySelector(".edit")
+    //     const titleElement = taskCard.querySelector("h1")
+    //     editBtn.addEventListener('click', () => {
+    //         let newTitle = prompt("Edit your task......")
+    //         if (newTitle) {
+    //             titleElement.textContent = newTitle
+    //         }
+    //     })
 
     taskContainer.appendChild(taskCard)
+    updateStats()
     taskForm.reset()
 })
 
+taskContainer.addEventListener('click', (e) => {
+    console.log(e.target);
 
-const moonBtn = document.querySelector(".moon")
+    if (e.target.classList.contains("delete")) {
+        const taskCard = e.target.closest(".task-body")
+        taskCard.remove()
+        updateStats()
+    }
+    if (e.target.classList.contains("check")) {
+        const taskCard = e.target.closest(".task-body")
+        const statusText = taskCard.querySelector(".categories h2:last-child")
+        taskCard.classList.toggle("completed")
+        if (taskCard.classList.contains("completed")) {
+            statusText.textContent = "Completed"
+        }
+        else {
+            statusText.textContent = "Pending"
+        }
+        updateStats()
+    }
+
+
+
+    if (e.target.classList.contains("edit")) {
+        const taskCard = e.target.closest(".task-body")
+        const titleElement = taskCard.querySelector("h1")
+        const newTitle = prompt("Edit Task...", titleElement.textContent)
+        if (titleElement) {
+            titleElement.textContent = newTitle
+        }
+    }
+
+})
+
 moonBtn.addEventListener('click', () => {
     if (document.body.dataset.theme == "light") {
         document.body.setAttribute(
@@ -89,6 +127,20 @@ moonBtn.addEventListener('click', () => {
 
     }
 })
+
+
+const updateStats = () => {
+    const total = document.querySelectorAll(".task-body").length
+    const completed = document.querySelectorAll(".task-body.completed").length
+    const pending = total - completed
+
+    totalTasks.textContent = total
+
+    completedTasks.textContent = completed
+    pendingTasks.textContent = pending
+}
+
+
 
 
 
